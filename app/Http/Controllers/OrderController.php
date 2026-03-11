@@ -41,7 +41,7 @@ class OrderController extends Controller
             ->when($dateFrom && !$dateTo, fn($q) => $q->whereDate('created_at', '>=', $dateFrom))
             ->when(!$dateFrom && $dateTo, fn($q) => $q->whereDate('created_at', '<=', $dateTo))
             ->withCount('orderItems')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('status')
             ->paginate(10);
 
         return view('orders.index', compact('orders'));
