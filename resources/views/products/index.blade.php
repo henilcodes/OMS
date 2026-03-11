@@ -55,17 +55,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($products as $customer)
+                        @forelse ($products as $product)
                             <tr>
                                 <td class="align-middle">{{ $loop->iteration }}</td>
-                                <td class="align-middle">{{ $customer->name }}</td>
-                                <td class="align-middle">{{ $customer->price }}</td>
-                                <td class="align-middle">{{ $customer->stock }}</td>
-                                <td class="align-middle">{{ $customer->order_items_count }}</td>
-                                <td class="align-middle">{{ $customer->created_at->format('M d, Y H:i') }}</td>
-                                <td class="align-middle">{{ $customer->updated_at->format('M d, Y H:i') }}</td>
+                                <td class="align-middle">{{ $product->name }}</td>
+                                <td class="align-middle">₹ {{ number_format($product->price, 2) }}</td>
+                                <td class="align-middle">{{ $product->stock }}</td>
+                                <td class="align-middle">{{ $product->order_items_count }}</td>
+                                <td class="align-middle">{{ $product->created_at->format('M d, Y H:i') }}</td>
+                                <td class="align-middle">{{ $product->updated_at->format('M d, Y H:i') }}</td>
                                 <td class="align-middle">
-                                    <a href="{{ route('products.edit', $customer->id) }}" class="btn btn-sm btn-primary me-2">Edit</a>
+                                    <a href="{{ route('products.edit', $product->id) }}"
+                                        class="btn btn-sm btn-primary me-2">Edit</a>
                                 </td>
                             </tr>
                         @empty
