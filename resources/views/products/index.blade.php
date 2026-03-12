@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Products')
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -29,7 +30,7 @@
                             value="{{ request('date_to') }}">
                     </div>
 
-                    <div class="col-md-3 text-end">
+                    <div class="col-md-5 text-end">
                         <button type="submit" class="btn btn-primary me-2">Filter</button>
                         <a href="{{ route('products.index') }}" class="btn btn-secondary">Reset</a>
                     </div>

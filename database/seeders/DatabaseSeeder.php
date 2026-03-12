@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Henil Code',
             'email' => 'henilcode@gmail.com',
             'password' => Hash::make('password'),
-            'email_verified_at' => now()
         ]);
 
         $this->call([

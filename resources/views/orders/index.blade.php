@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Orders')
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -123,6 +124,6 @@
     </div>
 
     <div class="mt-4">
-        {{ $orders->links('pagination::bootstrap-5') }}
+        {{ $orders->links() }}
     </div>
 @endsection
